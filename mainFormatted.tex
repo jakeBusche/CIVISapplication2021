@@ -1,0 +1,851 @@
+% !TeX program = lualatex
+\documentclass[11pt,a4paper]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Load packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% used for math symbols, typefaces, tools, and commands
+\usepackage{amsmath}
+
+% used to provide colored text and colored, linked reference options
+% \usepackage[
+% 	colorlinks=false,
+% 	urlcolor=blue,
+% 	bookmarks=false,
+% 	pdfpagemode=None
+% ]{hyperref}
+\usepackage[dvipsnames]{xcolor}
+
+% used to manage page margins, etc.
+\usepackage[a4paper]{geometry}
+\usepackage{fancyhdr}
+
+% used to add felixbility and customizability to tables and lists
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{tabularx}
+% \usepackage{listliketab}
+
+% used to determine bibliography styles and add flexibility to citations
+\usepackage[style = phys]{biblatex}
+% \usepackage[super,sort,comma,numbers]{natbib} %square
+% \usepackage{bibentry}
+
+% used to provide custom section fonts
+\usepackage{sectsty}
+
+% used to provide the ability to define document fonts
+\usepackage{fontspec}
+\usepackage{unicode-math}
+
+% used to provide flexibility to typesetting
+\usepackage{microtype}
+
+% used to get the wrapfigure environment that allows for text-wrapped figures 
+\usepackage{graphicx}
+\usepackage[font = footnotesize]{caption}
+\usepackage{wrapfig}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define functions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareCiteCommand{\citenum}
+  {}
+  {\printfield{labelnumber}}
+  {}
+  {}
+
+\newcommand{\infootcite}[1]{
+    \textsuperscript{\citenum{#1}}\fullcite{#1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Complete preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Set primary document font
+\setmainfont{Times New Roman}
+\setmathfont{XITS Math}
+
+% Let bibLaTeX know where the references are
+\addbibresource{refs.bib}
+
+% Get rid of article titles in references
+\AtEveryCitekey{\clearfield{title}}
+
+% Set page margins
+\geometry{
+  left = 15mm,
+  right = 15mm,
+  top = 15mm,
+  bottom = 15mm
+}
+
+% Title and author
+\title{Marie Curie European Fellowship 2021 Part B-1}
+\author{Jacob A. Busche}
+\date{Last updated: \today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Write document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% Build title
+% \maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \noindent\fbox{
+%     \parbox{155.72mm}{
+%         \noindent Notes (remove before submitting):\\
+%         \noindent \textcolor{gray}{All gray text is instruction material, and should be removed in the final application.}\\
+%         \noindent\textcolor{Blue}{All blue text is a direct writing prompt from the MSCA and should be kept and directly answered in the final document.}\\
+%         \noindent All black text is added by me.
+%     }
+% }
+
+% \textcolor{Blue}{\section{Excellence}}
+
+% \textcolor{Blue}{\subsection{Quality and pertinence of the project's research and innovation objectives (and the extent to which they are ambitious, and go beyond the state of the art)}}
+
+% \color{gray}
+% At a minimum, address the following aspects:
+% \begin{itemize}
+%     \item Describe the quality and pertinence of the R\&I objectives; are the objectives measurable and verifiable? Are the realistically achievable?
+%     \item Describe how your project goes beyond the state-of-the-art, and the extent to which the proposed work is ambitious.
+% \end{itemize}
+% \color{black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\noindent\textbf{1 Excellence}And then some stuff...and more stuf...\\
+\noindent\textbf{1.1 Quality and pertinence of the project's research and innovation objectives}\\
+\indent \textbf{\textit{Proposal Statement}} I propose to investigate the transfer of infrared optical signals between surface phonon polaritons (SPhPs) in polar crystal nanostructures and nearby polariton and nonlinear optical (NLO) resonances in their environments to understand the propensity of SPhPs to act as effective light-confining phenomena in quantum photonic circuits (QPCs). This work will have three aims, to be pursued in succession. \textit{Aim 1} is to produce a simple and firmly grounded analytical theory of coupled quantum SPhP resonances that details the effects of radiation on the transfer of information between and along nanoparticles, surfaces, waveguides, etc. and their ability to efficiently transmit coherent infrared optical signals within a nanostructured QPC. \textit{Aim 2} is to extend these models to capture the effects of material nonlocality and anisotropy to probe the ultimate limits of infrared light confinement within QPCs as well as explore the utility and feasibility of polariton routing effects. \textit{Aim 3} is to incorporate ultrafast quantum NLO processes relevant to signal generation and manipulation and describe in simple terms the ability of SPhPs to enhance NLO efficiency through hybridization processes. Further details can be found in Sections 1.2 and 2.3.
+
+
+
+
+
+
+
+
+% \subsubsection{Introduction to the State of the Art}
+
+\textbf{\textit{Introduction to the state of the art}} Photonic information processing, defined as the generation, transmission, transformation, and readout of digital signals mediated by photons between nanoscopic components, has captured the interests of physicists, chemists, and materials engineers since its proposal by Miller in 1969.\supercite{miller1969integrated} Separately, quantum information processing, defined as information processing performed using the nonclassical dynamics of microscopic particles, was proposed a decade later by Benioff in 1980.\supercite{benioff_computer_1980} Proposals for the use of photons as the quantum bits (qubits) in a quantum device soon followed,\supercite{milburn_quantum_1989,knill_scheme_2001} however the development of integrated photonic circuits has been slowed by the challenges of miniaturizing optical components, such that the vast majority of modern information processing systems, both classical and quantum, operate using charged particles rather than photons. Still, there are significant advantages to quantum photonic logic that make its investigation worthwhile.
+
+
+
+
+
+
+
+
+
+To get a quantitative sense of the size of these advantages, it is useful to compare a photonic device's performance to those of contemporary \textit{classical} computers. First, localized heating in modern electronic integrated circuits degrades transistors' performances through a number of mechanisms, including dopant diffusion, hot carrier generation, and crystal structure modification, that so significantly impact their reliability that processor speeds have to be reduced by a factor of $\sim$100 from the transistors' theoretical switching speed upper limit of $\sim$100 GHz to avoid heat-induced errors.\supercite{miller_are_2010} Conversely, proposed designs for photonic switches and interconnects, the core components of any logic circuit, generate far less heat during operation and are less sensitive to thermal disruption.\supercite{miller_device_2009,miller_device_1990,kapur_comparisons_2002} Second, many materials that support nonlinearities appropriate for manipulating optical signals can do so at infrared and visible frequencies.\supercite{savo_broadband_2020,zhou_broadband_2019} This in turn sets the fundamental optical switch rate upper limit to $\sim$1THz--$\sim$1PHz, a factor of $10^3$--$10^6$ higher than the current $\sim$1 GHz switching rates of silicon transistors.\supercite{slussarenko_photonic_2019} Finally, passive electronic components (i.e. wires) in electronic processors have capacitances that imbue delays onto the signals they carry between transistors. While these delays can be mitigated by increasing the power used to charge the passive components, this can only be done at the cost of adding thermal stress to the processor. Photonic passive components, meanwhile, require no such ``charging'' and have no other data transport speed limit than the propagation velocities of the electromagnetic waves they guide.\supercite{miller_are_2010,miller_device_2009}
+
+
+\begin{figure}[b!]
+\vspace{-11pt}
+\footnotesize{
+\infootcite{miller1969integrated};
+\infootcite{benioff_computer_1980};
+\infootcite{milburn_quantum_1989};
+\infootcite{knill_scheme_2001};
+\infootcite{miller_are_2010};
+\infootcite{miller_device_2009};
+\infootcite{miller_device_1990};
+\infootcite{kapur_comparisons_2002};
+\infootcite{savo_broadband_2020};
+\infootcite{zhou_broadband_2019};
+\infootcite{slussarenko_photonic_2019};
+\infootcite{pop_heat_2006};
+\infootcite{assad_performance_2000};
+\infootcite{sommer_attosecond_2016};
+\infootcite{munoz-matutano_all_2020};
+}
+\end{figure}
+
+ 
+
+
+% The primary draw of these technologies today is the relatively weak coupling between light and matter, which allows optical components to generate far less heat during operation than their electronic counterparts. In modern integrated circuits, localized heating by electron motion across transistors and along wires degrades transistor performance through a number of mechanisms that inhibit the transistors' ability to create appropriate and reliable output signals when set upon by electrical pulses.\textbf{[cite Pop 2006]} These mechanisms include dopant diffusion, hot carrier generation, and crystal structure breakdown, and are currently suppressed via reduction of the processors' frequencies from their theoretical maxima near $\sim$100 GHz to $\sim$1 GHz\textbf{[cite Miller 2010]}. In other words, electronic computers are strongly speed-constrained by their inability to disperse heat generated during operation. Photonic computation promises to release computers from these frequency constraints by reducing the heat generated by switches and the connections between them during operation, allowing any active materials in an integrated circuit to operate closer to their fundamental performance limits.
+
+
+
+
+Many of the benefits photons provide over electrons in logic circuits are borne from their lack of mass and their weak coupling to matter. In general, the former property is important for speed improvements, as photons have no inertia to overcome during ``on/off'' transitions of a switch. The latter property is important for improvements in energy losses and scalability, as photons much less readily excite vibrations in their surroundings as they pass through a material than do massive carriers. For example, a single logical operation executed by a transistor and its connecting wires requires $\sim$1 fJ of energy, which is lost to heat.\supercite{miller_device_1990,pop_heat_2006,assad_performance_2000} In contrast, recent studies of optical switching generated in silica by the Kerr effect, in which a material's refractive index changes as a function of the electric field strength of the incident light, as well as in quantum dots, in which the fermion statistics of excitons generates power-dependent responses, demonstrated that per-switch power losses several orders of magnitude lower than the losses of electronic transistors are feasible in controlled settings.\supercite{sommer_attosecond_2016,munoz-matutano_all_2020} This large difference between the switching energies in electronic and photonic systems is governed by the power threshold at which either can be operated without succumbing to thermal errors. Thus, while modern transistors are forced to operate at a potential of $\sim$1 V and corresponding power of $\sim$1 mW in order to pass along and output signals that can be clearly distinguished from thermal noise,\supercite{assad_performance_2000} experimental photon manipulation devices have demonstrated sensitivity to single photons, streams of which carry powers $\sim\hbar\omega^2$ that can range from a tenth of a mW to as small as $\sim$10 nW within the visible and infrared regimes.\supercite{slussarenko_photonic_2019}
+
+
+
+
+These power savings translate directly into scalability advantages in QPCs as the error probability of a given qubit is inversely proportional to the level of thermal noise it experiences. Most existing quantum computers encode information within the entangled wavefunctions of charged particles, exploiting their ease of preparation and confinement, but fall victim to the same errors engendered by random thermal processes that classical electronic systems do. Not only are such quantum logic systems extremely limited in the number of qubits that they can simultaneously maintain, but they often require supercooled superconducting interconnections to operate, further increasing their power needs and decreasing their efficiencies.\supercite{arute_quantum_2019} Photonic qubits, in contrast, require no such cooling in principle to maintain long coherence times and provide a logical medium that can be scaled well without encountering significant decoherence effects, in addition to their low power draw, rapid transit speed, and ultrafast frequencies.\supercite{miller_are_2010,tuniz_nanoscale_2021} In fact, these properties, in addition to recent successes in preparing and measuring single- and few-photon states, serve as the basis for the common assertion that QPCs satisfy five of the seven DiVincenzo criteria for a quantum computer.\supercite{slussarenko_photonic_2019} Perhaps it should be no surprise that the recently the record for the number of simultaneously supported qubits in a quantum computer, 73, was set by an optical circuit.\supercite{zhong_quantum_2020}
+
+
+
+
+Moving forward, it is clear that the usefulness of the next generation of QPCs will be inversely related to the size of their components. As evidenced by the improvements over the last several decades to the power and availability of electronic computing, miniaturization of circuit components allows for decreases in communication time between switches and memory units, minimizes the ability of external forces to cause damage to or errors in the circuit, minimizes the power required to move signals from place to place, and maximizes the number of switches that can be contained within a given footprint. Electronic computers gained significant boosts to their utility when the dimensions of transistors were reduced to the nanoscale, and similar benefits are promised for optical circuits. However, to date, the realization of nanophotonic computation platforms has eluded the efforts of the optics community. Progress has been made recently in the construction of low-power, high-speed \textit{micron}-scale optical information processors, in which photons are ``trapped'' within waveguides constructed from dielectric materials.\supercite{chen_emergence_2018,smit_past_2019,slussarenko_photonic_2019} Encouragingly, these information processing platforms have demonstrated utility in both classical and quantum computing, where they have shown promise as specialized tools to perform analog signal processing duties, matrix calculations relevant to machine learning, and rudimentary quantum simulation tasks.\supercite{ding_optical_2014,ahmed_integrated_2020,obrien_demonstration_2003} However, in order for QPCs to sustain the greatest number of qubits and lowest error rates possible, their components must be reduced miniaturized to the nanoscale. 
+
+
+
+
+\begin{figure}[b!]
+\vspace{-11pt}
+\footnotesize{
+\infootcite{arute_quantum_2019};
+\infootcite{tuniz_nanoscale_2021};
+\infootcite{zhong_quantum_2020};
+\infootcite{chen_emergence_2018};
+\infootcite{smit_past_2019};
+\infootcite{ding_optical_2014};
+\infootcite{ahmed_integrated_2020};
+\infootcite{obrien_demonstration_2003};
+\infootcite{olafsson_electron_2020};
+\infootcite{jensen_nanosphere_2000};
+\infootcite{lagos_mapping_2017};
+\infootcite{wu_synthesis_2008};
+\infootcite{jiang_boosting_2018};
+\infootcite{zhou_copper-based_2016};
+\infootcite{guo_plasmonic_2014};
+\infootcite{wei_plasmon_2018};
+\infootcite{foteinopoulou_phonon-polaritonics_2019};
+}
+\end{figure}
+
+
+
+
+
+% Photons are also massless, which makes them promising candidates for use in switches that are ultrafast and low power in addition to being cool. In more detail, electronic logic circuits require the transport of electrons across nanometer-scale silicon crystals to produce (or repopulate) current-restricting depletion regions and perform logic operations with the switchable ``on'' or ``off'' conduction behaviors the depletion regions create. The time and energy required to move these (massive) electrons are small at $\sim$10 ps and $\sim$1 fJ per logic operation, respectively, but they add up when several billion transistors are operated over long time scales.\textbf{[cites]} Electronic connections between transistors also generate additional delays and consume power due to their internal capacitances and resistances, and often draw more power than the transistors themselves.\textbf{[cites]} Photonic switches and interconnects, conversely, have similarly high fundamental boundaries to their performance, as their operation frequencies are limited mainly by the frequency of light they use. For a photonic circuit operating with mid- to near-infrared or visible light, this limit lies between 10 and 100 THz, corresponding to switching speeds of $\sim$1--10 fs per operation, a factor of $10^3$--$10^4$ higher than that of an electronic circuit.
+
+
+
+
+% massless nature of photons, which might allow an optical circuit to transport and manipulate digital signals at far lower powers and higher speeds than can be done electronically.\textbf{[cites]} With the proliferation of computation throughout nearly every sector of the modern global economy, these savings have the potential to dramatically improve the efficiency of existing efforts in scientific, logistical, and financial modeling, as well as enable new methods of simulating highly complex systems like economic markets, legal systems, or neuron networks.
+
+
+
+
+% The ultimate limits on photonic switch and waveguide \textit{power consumption} are under active investigation. Recent studies of optical switching generated in silica by the Kerr effect, in which a material´s refractive index changes as a function of the electric field strength of the incident light, as well as in quantum dots via the nonlinear motion of excitons have demonstrated that per-switch power losses several orders of magnitude lower than the losses of electronic transistors are feasible in controlled settings. Further, while it has long been known that optical connections between switches at chip-level distances waste more energy than do metal wires due to their poor ability to confine light at such small scales, recent advances in nanoscopic waveguide lithography have demonstrated marked advancements
+
+
+% These results suggest that the replacement of components in electronic computers one-for-one with photonic waveguides and switches is at least fundamentally feasible. 
+
+% They also suggest that photonic circuitry may find use in \textit{quantum} computing as well, in which the low thermal losses of photonic interconnects and switches
+
+
+
+
+% Curent limitations in computation efficiency stem from the physical processes underpinning the operation of modern electronic logic circuits, which require the transport of electrons across nanometer-scale silicon crystals in transistors to produce (or repopulate) current-restricting depletion regions within the crystals to perform logical operations. The time and energy required to move these massive electrons is small, but even the smallest silicon crystals cannot switch between ``on'' and ``off'' faster than $\sim$1 billion times per second at an energy cost of $XXX$ Joules per switch.\textbf{[cites]} In contrast, proposed designs for optical switches, in which light is confined within some form on nonlinear optical material, require much less dramatic motion of the confining material's charges such that the switch's speed is mainly limited by the frequency of light used to carry signals in and out. Arrays of optical switches operating in the IR or visible range could thus cycle at frequencies between $\sim$10 THz and $\sim$1 PHz, an advantage of a factor of $10^4$--$10^6$ over transistors in modern $\sim$1 GHz processors.\textbf{[cites]} These switches could also operate at much lower powers by avoiding thermal losses inherent to electron motion within semiconductor transistors and metal wires, with proposed per-switch energy costs as low as $XXX$ Joules.\textbf{[cites]}
+
+% perform binary operations using ultrafast switches and shuttle signals across a microchip at the speed of light using a fraction of the power required to relay the same signals electronically.\textbf{[cites]} 
+
+
+% In fact, a photonic processor's speed is limited mainly by the frequency of light used to carry signals between its components, such that arrays of optical switches operating in the IR or visible range could cycle at frequencies between $\sim$10 THz and $\sim$1 PHz, an advantage of a factor of $10^4$--$10^6$ over transistors in modern $\sim$1 GHz processors.\textbf{[cites]} These switches also would not require the transport of charge carriers through a semiconducting crystal and therefore would not lose nearly as much energy to heat.\textbf{[cites]}
+
+
+
+% While the promised high performance of nanophotonic computer components makes them desirable to replace existing electronic components one-for-one in modern classical computers, photonic logic has also emerged in recent years as a viable platform for performing \textit{quantum} computation as well, though for slightly different reasons.\textbf{[cites]} Most existing quantum computers encode information within the entangled wavefunctions of charged particles, exploiting their ease of preparation and confinement, but fall victim to the same limits in operational efficiency as classical electronic computers--namely, that charged particles have significant inertia and interact strongly with thermal processes in their environments.\textbf{[cites]} These strong interactions limit the qubits' coherence times and thus cause high error rates and truncate the scalability of the logic circuit.\textbf{[cites]} Further, to mitigate thermal losses, qubits are often passed through supercooled superconducting wires, magnifying the energy cost per operation.\textbf{[cites]} Photonic qubits, in contrast, have relatively long coherence times, providing a logical medium that can be scaled well without encountering significant decoherence effects.\textbf{[cites]} Similar to classical obtical bits, they also have low power draws, rapid transit speeds, and the ability to be manipulated by ultrafast switches.\textbf{[cites]}
+
+
+
+
+% To date, the realization of nanophotonic computation platforms has eluded the efforts of the optics community. Progress has been made recently in the construction of low-power, high-speed \textit{micron}-scale optical information processors, in which photons are ``trapped'' within waveguides constructed from dielectric materials.\textbf{[cites]} Encouragingly, these information processing platforms have demonstrated utility in both classical computing, where they have shown promise as specialized tools to perform analog signal processing duties, matrix calculations relevant to machine learning, and rudimentary quantum simulation tasks.\textbf{[cites]} However, in order for photonic logic circuits to surpass the utility of modern electronic chips in general computation, the density of circuit elements must surpass $\sim XXX$ switches per square millimeter, such that the elements themselves must have dimensions $\lesssim 20$ nm. The immobile electrons within even the most polarizable dielectric cannot store enough energy to confine a light wave within such tight volumes.
+
+
+
+Even the most polarizable dielectrics such as Si or Ge do not have sufficiently polarizable charges to confine a light wave within such tight volumes. Encouragingly, however, dielectric materials are far from the only candidate materials with which to perform nanoscale optical logic. The last two decades have witnessed advances in nano-fabrication and microscopy techniques that have allowed for the realization and characterization of tailored nanostructures made of metals, semicondcutors, and polar crystals that have shown the ability to efficiency focus optical energy to strongly subwavelength regions of space.\supercite{olafsson_electron_2020,jensen_nanosphere_2000,lagos_mapping_2017} Furthermore, these fields are focused at locations outside the structures' surfaces, allowing them to couple efficiently to external resonances, making them ideal candidates with which to construct a network of interacting components such as a logic circuit. In fact, polaritonic nanostrcutures have already shown promise in simpler applications, such as chemical sensing,\supercite{guo_plasmonic_2014} biological imaging,\supercite{zhou_copper-based_2016} energy harvesting,\supercite{wu_synthesis_2008} and photocatalysis.\supercite{jiang_boosting_2018}
+
+
+
+
+In general, optical confinement is achieved near these materials by their highly mobile charge carriers, be they free electrons, excitons, or nuclei, which couple strongly to the photon field and form collective resonances called polaritons. These bosonic hybrid light-matter states form characteristic patterns of charge density and electric field near a particle's surface and minimize the field strength within their bulk. What is more, the material and shape of the particles can be modified to tune and reshape the observables of a given polariton mode to serve a given purpose. For example, nanostructures with dimensions around one-half the wavelength of a polariton resonance will support a discrete set of standing-wave modes the interact strongly with the photon field. Reducing the size of the particles minimizes the polaritons' ability to radiate, and increasing the particles' sizes transforms the standing wave modes into propagating resonances with well-defined momenta.\supercite{wei_plasmon_2018} Alteration of material parameters such as carrier densities, bond strengths, nucleus masses, and single particle excitation densities of states provides similarly large changes in polariton behaviors, such that polaritons provide a ``one-stop shop'' for an engineer designing nanophotonic devices.\supercite{luther_localized_2011,foteinopoulou_phonon-polaritonics_2019}
+
+
+
+
+However, while the remarkable flexibility of polaritons has made them an interesting research topic for decades, their realization has been slow, allowed only by hard-won improvements in nanofabrication and nanospectroscopy technology. The first polariton modes discovered in the laboratory, so-called plasmon polaritons propagating along the surfaces of metals with highly polarizable electron plasmas, were observed in thin metal films using early electron beam microscopes in 1959.\supercite{powell_origin_1959} In the succeeding decades, the successful fabrication, visible spectrum responses, and giant optical cross-sections of plasmon resonances in films and nanostructures captured the bulk of nanophotonics researchers' attention. This interest has extended to photonic logic research and remains intense today.\supercite{fang_nanoplasmonic_2015,davis_plasmonic_2016,tuniz_nanoscale_2021} However, plasmon polaritons have relatively high damping rates due to electron-phonon collisions among their constituents. As a result, multiple strategies have been used to mitigate the effects of plasmon damping, including hybridizing plasmon polaritons with optical modes in dielectrics, using novel 2D plasmonic materials, and fabricating new plasmonic nanostructures from doped semiconductors, each of which involves careful nanoengineering and chemical synthesis and comes at the cost of increasing the volume and/or complexity of circuit elements.\supercite{davis_plasmonic_2016} A viable alternative to plasmons with a smaller intrinsic damping rate is therefore desirable to aid the miniaturization of optical logic.
+
+
+
+
+
+
+
+\setlength{\intextsep}{0pt}
+\begin{wrapfigure}{r}{0.45\textwidth}
+\vspace{-12pt}
+    
+\begin{center}    
+    \includegraphics[width = 0.45\textwidth]{figure.pdf}
+\end{center}
+
+\vspace{-20pt}
+    \caption{\footnotesize{
+        An indirect comparison of surface plasmon and phonon confinement behaviors. \textbf{Upper)} Theoretical (colors, gray line) demonstration of breakdown of surface and bulk plasmon resonances in very small ($r\lesssim\lambda/100$) silver nanospheres with experimental (points) measurements overlaid.\supercite{scholl_quantum_2012} \textbf{Lower Left)} Theoretical prediction of orders-of-magnitude loss of field enhancement due to nonlocality in gold plasmonic nanogaps. Strength of nonlocality is quantified by the parameter $\beta$. Experimental $\beta$ fit is $1.27\times10^6$, local model has $\beta = 0$.\supercite{ciraci_probing_2012} \textbf{Lower Right)} Relatively small difference of quality factor in very small SiC spheres between local (blue) and nonlocal (simulation red, analytical model green) models.\supercite{gubbin_optical_2020} All panels adapted from the indicated articles.
+    }}
+    \label{fig:fig}
+
+% \vspace{-6pt}
+\end{wrapfigure}
+
+
+
+
+
+% \subsubsection{Moving Beyond the State of the Art}
+
+\textbf{\textit{Moving beyond the state of the art}} SPhPs, which are the collective oscillations of polar crystal nuclei (rather than electrons) coupled to light, provide that alternative, with damping rates $\lesssim1\%$ that of plasmons in even the least lossy metal, silver.\supercite{foteinopoulou_phonon-polaritonics_2019} Furthermore, SPhPs appear capable of maintaining coherence while oscillating in particles smaller than 1/100$^\mathrm{th}$ of their photon wavelength, the size limit beneath which plasmons begin to lose their collective oscillatory behavior,\supercite{campos_plasmonic_2019} such that light confinement may be relatively easier in SPhP-based technologies than in similar plasmonic circuits (see Figure \ref{fig:fig}). Phonon polaritons are also a relatively poorly understood phenomenon, as their mid- to far-IR resonances are difficult to characterize using modern light sources and detectors.\supercite{weng_cdspbse_2014} Modern nanospectroscopy techniques are quickly filling this need and fabrication efforts are advancing apace,\supercite{lagos_mapping_2017,caldwell_low-loss_2015} however the field is currently operating without a theoretical roadmap to guide experimental efforts. \textbf{More precisely, a clear and coherent theoretical description of the dependence of an SPhP-based QPC's performance on the morphologies and materials of its constituents does not exist.} Such a roadmap would be of high utility to the nanophotonics field. In fact, the lack of a collection of simple guiding principles is partially responsible for the slow development of plasmonic integrated circuits, the components of which have been under rigorous investigation for two decades and have been viewed as promising phenomena for optical logic since $\sim$2010.\supercite{miller_are_2010} In order to advance the understanding and application of quantum photonic computers at the greatest possible speed, a guiding theory usable by experimentalists \textit{before} they develop the means to produce nanostructured SPhP QPCs is needed.
+
+
+
+
+
+
+\begin{figure}[b!]
+\vspace{-11pt}
+\footnotesize{
+\infootcite{powell_origin_1959};
+\infootcite{fang_nanoplasmonic_2015};
+\infootcite{davis_plasmonic_2016};
+\infootcite{scholl_quantum_2012};
+\infootcite{ciraci_probing_2012};
+\infootcite{gubbin_optical_2020};
+\infootcite{campos_plasmonic_2019};
+\infootcite{weng_cdspbse_2014};
+\infootcite{caldwell_low-loss_2015}
+}
+\end{figure}
+
+
+
+
+
+% \subsubsection{Measurable, Verifiable, Achievable, and Ambitious Research Objectives}
+
+
+
+
+\textbf{\textit{Measureable, verifiable, achievable, and ambitious research objectives}} This project aims to produce precisely this theory to characterize with simple analytical models, verified by full-wave electromagnetic simulations, the movement of information within and between SPhPs in polar crystal nanostructures and their environments. Particular attention will be given to the interactions of localized phenomena such as localized surface phonons, nanoscopic IR light sources, and NLO resonances, which will act as sources or destinations for optical signals, and propagating SPhPs, which will carry these signals between nodes. These models will be based on existing polariton hybridization theories but will go beyond the state of the art to tackle several specific problems. The first is the difficulty of accurately modeling the quantum dynamics of radiative or ``leaky'' photonic modes, a class of resonances which includes propagating polaritons, when they are coupled to external resonances. This problem stems from the fundamental disconnect between the physical picture derived from Maxwell's equations, namely that a radiative nanophotonic system supports a continuous set of unique polariton modes at each frequency $\omega$, and the human desire to describe the system using a simplified set of discrete broadened modes. Solving this problem is important to economically describe propagation lengths and coherence lifetimes of SPhPs, and the solution will lean on models developed by the groups of Dr. Johannes Feist (JF), Prof. Antonio I. Fern\'{a}ndez-Dom\'{i}nguez (AFD), and Prof. Francisco J. Garc\'{i}a-Vidal (FGV). In more detail, the theory of JF, AFD, and FGV has demonstrated that energy exchange between an emitter and a leaky cavity mode, notoriously difficult to describe analytically, can be modeled to good approximation by imparting the cavity with a discrete set of broadened modes that are allowed to exchange energy among themselves.\supercite{medina_few-mode_2021} This theory will be extended to model the propagating SPhPs of extended nanostrcutures and their interaction with the emission from nanoscopic light sources, as the accurate depiction of the spatial and spectral properties of both is highly dependent on a faithful description of radiation. The result will be a novel picture of photon transfer from emitters to waveguides of any material and shape.
+
+% which demonstrate that the continuous set of modes of a leaky cavity can be very accurately represented by a discrete set of broadened modes when those modes are allowed to exchange energy among themselves.\textbf{[cites]} A successful application of this theory in the effort to extremize phonon polariton circuit signal propagation lengths and coherence lifetimes will provide a small number of simple strategies that account for the full coupling among the system's polariton modes (both between and within particles) and the thermal bath.
+
+
+
+
+The interactions between the leaky components of an SPhP QPC and localized SPhPs in nanoparticles will be a straightforward addition form there. Because the wavelengths of SPhPs are so long, nanostrcutures with dimensions up to 100 nm and beyond can be faithfully described by the quasistatic limit, which neglects radiation at the benefit of providing an extremely simple and clear connection between the dielectric properties of a nanoparticle and its polariton dynamics. I have extensive experience with these models, and my previous work will be leveraged to modify the purely electrostatic description of localized SPhPs to model their interactions with leaky polaritons. Particular effort will be placed toward an analysis of the propensity of localized SPhPs in small ($\sim$50 nm) particles to enhance photon transfer between emitters and propagating SPhPs. This process is often inefficient in simple emitter-near-surface or emitter-near-waveguide structures due to the wavevector mismatch between coresonant free-space photons from the emitter and the propagating polaritons of the structure, and the highly enhanced electric fields and poorly-defined wavevectors of localized polaritons makes them an appropriate intermediary with which to relax the coupling selection rules. However, the difficulties of precisely fabricating nanoscopic antennae between emitters and waveguides has prevented the popular adoption of nanoantenna intermediates, such that a careful analysis of the benefits of their introduction to a QPC is necessary to accelerate design efforts.
+
+
+
+
+
+The second problem my models will approach is the challenge of including material nonlocality and anisotropy in the description of SPhP motion. All materials have nonlocal responses to light to some degree, as the charges within their bulk interact with one another such that the motion of any given charge is dependent on the material's polarization at other positions. Similarly, the lack of symmetry in non-cubic crystal structures produces differences in the spectra of phonons that propagate along different crystal axes, i.e. phonons with anisotropic responses. However, nonlocal and anisotropic effects complicate the solutions to Maxwell's equations, separating discrete resonances into sets of modes that each have a unique wave vector (momentum) $\mathbf{k}$ ($\hbar\textbf{k}$) and a resonance position that depends on all of the elements of an electric susceptibility tensor rather than a single dielectric function, such that they are usually neglected unless absolutely necessary. With most recent nanophotonics work focused on plasmon polaritons in metals, which commonly display neither strong nonlocal \textit{nor} anisotropic effects in particles larger than $\sim$1/100$^\mathrm{th}$ the length of the polariton wavelength, these complicated effects have not entered the mainstream of nanophotonics research. However, recent efforts have shown that local dielectric approximations may be inappropriate for nanoscale \textit{phononic} particles, both due to the longer wavelengths of SPhPs and the stronger interparticle interactions between crystal nuclei. In fact, simple nanostructures can display resonance spectra that disagree qualitatively when treated with either local and nonlocal dielectric models, such that a thorough accounting of nonlocality is key to the development of a useful guiding theory.\supercite{gubbin_optical_2020,gubbin_perspective_2021} In addition, the discovery of hyperbolicity, a particularly extreme form of anisotropy in which the phonon modes of one axis of a crystal propagate in a spectral region in which orthogonal phonons do not, in atomically thin layers of hBN and other materials has raised the possibility of developing nanostructures that route polaritons of different frequencies in dramatically different fashions. My efforts will aim to analyze the importance of nonlocality and the possibility of exploiting anisotropy by extending the theories described above to include wavevector dependence and tensorial susceptibilities. The success of the theory will be measured by the prediction of nonlocality-induced resonance shifts and coupling strength modifications, the development of structures with momentum-protected states, and the invention of ensembles that display qualitatively different photon routing behaviors at different frequencies.
+
+
+
+
+
+\begin{figure}[b!]
+\vspace{-11pt}
+\footnotesize{
+\infootcite{medina_few-mode_2021};
+\infootcite{gubbin_perspective_2021}
+}
+\end{figure}
+
+
+
+
+
+
+Lastly, my models will advance the understanding of the enhancement of NLO processes by SPhPs. These processes, in which a photon is destroyed and its energy scattered among two or more photons, or vice versa, are fundamental to quantum optical logic, providing a means to differentiate between the ``on'' and ``off'' states of a switch that cannot be similarly achieved with linear optical materials.\supercite{sasikala_all_2018} Further, NLO materials are currently under investigation as quantum light sources for their ability to generate entangled photons on demand through parametric downconversion processes.\supercite{zhang_preparation_2011} Unfortunately, nonlinear optical processes in solids, especially those that are ultrafast, are inefficient, allowing most photons to pass without changing color. More explicitly, a fraction of the energy contained within a NLO material's response at the fundamental frequency $\omega$ is converted to a bound current that drives the material's response at an output frequency $n\omega$, and that fraction is often $\sim$$10^{-8}$ or less.\supercite{shi_efficient_2019} Current strategies for increasing the efficiencies of these processes using surface polaritons focus on the unidirectional transfer of optical energy between an NLO particle and free radiation, encompassing 1) the increase of a particle's incoming photon flux by exploiting the enhanced near fields of nearby polaritons and/or 2) the encouragement of the emission of its product photons by placing a nonlinear material in a region of polariton-enhanced density of photon states.\supercite{yi_doubly_2019} These strategies have found use in many contexts and have suggested NLO efficiencies may reach as high as $\sim$1\%.\supercite{lu_efficient_2011} However, polaritonic systems usually acquire their unique and desirable properties by exploiting hybridization, a process in which photons are exchanged many times between resonances, and optical circuits in particular require the suppression of radiation losses to minimize their power use. Strategies for using hybridization to improve NLO performance are limited but promising, with one in-preparation study led in part by myself demonstrating both in theory and experiment the ability of nonradiative surface plasmons to magnify the production of second harmonic ($2\omega$) photons by dielectric NLO particles simply by coupling both to the dielectric's resonant modes near 2$\omega$ and to its nonlinear bound current. The theoretical efforts herein proposed will build on this result to investigate IR NLO enhancements generated by hybrid nanostructures involving polar crystals. In particular, it will extend the model previously developed by the author to characterize the propensity for nonradiative second harmonic generation enhancement by SPhPs. This model will be applied to both generic infrared NLO materials for proof-of-concept purposes as well as realistic materials currently studied using quantum methods by Dr. Hans-Christian Weissker of Aix-Marseille University and the CNRS. The models will be tested against full wave simulations and, if need be, will also incorporate some degree of atomistic simulation. If successful and timely, the research will then focus on the SPhP-mediated nonradiative enhancement of parametric downconversion as well as some useful third-order nonlinear phenomena like the Kerr effect. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textcolor{Blue}{\subsection{Soundness of the proposed methodology (including interdisciplinary approaches, consideration of the gender dimension and other diversity aspects if relevant for the research project, and the quality of open science practices, including sharing and management of research outputs and engagement of citizens, civil society and end users, where appropriate)}}
+
+% \color{gray}
+% At a minimum, address the following aspects:
+% \begin{itemize}
+%     \item \underline{Overall methodology}: Describe and explain the overall methodology, including the concepts, models, and assumptions that underpin your work. Explain how this will enable you to deliver your project's objectives. Refer to any important challenges you may have identified in the chosen methodology and how you intend to overcome them.
+%     \item \underline{Integration of methods and disciplines to pursue the objectives}: Explain how expertise and methods from different disciplines will be brought together and integrated in pursuit of your objectives. If you consider that an inter-disciplinary (meaning the integration of information, data, techniques, tools, perspectives, concepts, or theories from two or more scientific disciplines) approach is unnecessary in the context of the propsed work, please provide a justification.
+%     \item \underline{Gender dimension and other diversity aspects}: Describe how the gender dimension and other diversity aspects are taken into account in the project's research and innovation content. If you do not consider such a gender dimension to be relevant in your project, please provide a justification.
+%     \begin{itemize}
+%         \item Remember that this question relates to the \underline{content} of the planned research and innovation activities, and not to gender balance in the teams in charge of carrying out the project.
+%         \item Sex, gender, and diversity analysis refers to biological characteristics and social/cultural factors respectively. For guidance on methods of sex/gender analysis and the issues to be taken into account, please refer to https://ec.europa.eu/info/news/gendered-innovations-2-2020-nov-24\_en.
+%     \end{itemize}
+%     \item \underline{Open science practices}: Describe how appropriate open science practices are implemented as an integral part of the proposed methodology. Show how the choice of practices and their implementation is adapted to the nature of your work in a way that will increase the chances of the project delivering on its objectives [\textit{e.g. up to 1/2 page, including research data management}]. If you believe that none of these practices are appropriate for your project, please provide a justification here.\\
+%     \\
+%     \textit{Open science is an approach based on open cooperative work and systematic sharing of knowledge and tools as early and widely as possible in the process. Open science practices include early and open sharing of research (for example through pre-registration, registered reports, pre-prints, or crowd-sourcing); research output management; measures to ensure reproducibility of research outputs; providing open access to research outputs (such as publications, data, software, models, algorithms, and workflows); participation in open peer-review; and involving all relevant knowledge actors including citizens, civil society and end users in the co-creation of R\&I agendas and contents (such as citizen science).}\\
+%     \\
+%     \textit{Please note that this does not refer to outreach actions that may be planned as part of the communication, dissemination and exploitation activities. These aspects should instead be described below under ‘Impact’.}
+%     \item\underline{Research data management and management of other research outputs}: Applicants generating/collecting data and/or other research outputs (except for publications) during the project must explain how the data will be managed in line with the FAIR principles (Findable, Accessible, Interoperable, Reusable).\\
+%     \\
+%     \textit{For guidance on open science practices and research data management, please refer to the relevant section of the HE Programme Guide on the Funding \& Tenders Portal}
+% \end{itemize}
+% \color{black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+% \newpage
+\noindent\textbf{1.2 Soundness of the methodology}
+% \subsubsection{Research Methodology}\label{sec:ResPlan}
+
+\textbf{\textit{Research methodology}} The core technique used to conduct the research described in the previous section is analytical quantum optics in the presence of classical matter, sometimes referred to as macroscopic quantum electrodynamics or the hemiclassical approximation (as opposed to \textit{semi}classical) because the photons themselves are quantized while the dynamics of the matter are not. This approximation has been readily employed in cavity quantum optics work in the past\supercite{dalton_field_1996} and has also been used in limited cases to describe quantum plasmon behavior in the past due to its simplicity:\supercite{asenjo-garcia_plasmon_2013} rather than attempting to quantize the photon field and any present charges and currents starting from Maxwell´s equations in vaccuum, a prohibitive task when all but the smallest molecules are present, the quantization is performed by replacing the degrees of freedom of the matter with a polarization field, sacrificing a precise picture of matter for a simple one in the same way that successful classical nanophotonics models have done to good effect.
+
+
+
+
+
+The results of this technique are the most striking when combined with the quasistatic approximation, which simplifies the wave equation of electromagnetism to a much simpler Poisson equation. The solutions to the quantized Maxwell´s equations in this case are analytically tractable as long as the matter of the system is small, simple, and symmetric, and from these solutions a description emerges of the system's localized polariton resonances as a discrete set of independent quantum harmonic oscillators with well defined energies and symmetries. In the classical analog of the theory the damping rate of each oscillator mode is also analytically soluble such that, while an exact description of damping cannot be included in a tractable quantum theory, a good approximation can be made using density matrix methods and a Lindblad damping operator parameterized by the results of the classical model. Thus, this theory can describe precisely and simply the full set of mechanical and electromagnetic properties needed to describe the transfer of qubits between nanoparticles when radiation is not important. Because SPhPs have wavelengths $\sim$10,000 nm, polar crystals particles with dimensions $\lesssim100$ nm are well within the small particle limit and radiate only negligibly such that this quasistatic theory is well positioned to form the backbone of my investigations.
+
+
+
+
+
+\begin{figure}[b!]
+\vspace{-11pt}
+\footnotesize{
+\infootcite{sasikala_all_2018};
+\infootcite{zhang_preparation_2011};
+\infootcite{shi_efficient_2019};
+\infootcite{yi_doubly_2019};
+\infootcite{lu_efficient_2011};
+\infootcite{dalton_field_1996};
+\infootcite{asenjo-garcia_plasmon_2013}
+}
+\end{figure}
+
+
+
+
+
+
+Clearly, though, the addition of radiation to the quantized static model will be necessary when modeling extended nanostructures such as waveguides, nanowires, or emitters such as quantum dots or NLO particles. This addition has already been performed in simple systems by the groups of JF, AFD, and JGV,\supercite{medina_few-mode_2021} and is included in a manner very similar to the inclusion of internal damping in quasistatic systems. The classical spectra (scattering, extinction, normalized spectral density, etc.) of a leaky resonator are analyzed by hand to approximate the locations of a few apparent broadened resonances. The classical damping rates and exact  spectral locations of each of those resonances can then be fit numerically and used to characterize a the Lindblad operator and uncoupled Hamiltonian in the quantum master equation. Importantly, however, the fitting procedure is extended to the case wherein the apparent modes are not independent. Interactions between the resonances generate the asymmetric lineshapes of their response peaks and the corresponding phase lags in their responses to driving forces such that the theory is capable of capturing the physics both very broad and very narrow Fano-like particle responses with equal veracity. Finally, because the theory makes no assumptions \textit{a priori} about the links between the modes' resonant behaviors and their electric fields as e.g. a quasinormal mode theory would, it does not suffer the same exponentially growing field pathology that has plagued previous attempts to model leaky cavities. It is thus much more useful for modeling the transfer of energy and information through waveguides and across particle ensembles. However, the theory still requires generalization to cases where multiple nanostructures interact. In particular, due to the numerical expense of simulating the resonances of large numbers of nanoparticles and ensembles with large differences in particle sizes, an optimal theory for predicting the usefulness of SPhP circuits will be able to construct a simple picture of each particle's polariton dynamics individually and then use that picture to transparently describe the coupling between the circuit elements. In this way, energy transfer rates, degrees of entanglement, etc. between the modes of each particle can be related back to experimentally tunable parameters, providing future experimental efforts with a roadmap. 
+
+
+
+
+
+The most mathematically rigorous way to provide this clear picture of interparticle coupling is with dyadic Green's functions $\mathbf{G}(\mathbf{r},\mathbf{r}';t,t')$, which are solutions to the wave equation when only a point source is present. Green's functions allow the description of the observables of photonic modes of any symmetry and spectral response to be described at a point $(\mathbf{r},t)$ when driven by an equally general current dsitributed across a set of points $(\mathbf{r}',t')$. They can be used in polariton hybridization problems when one allows one resonance of a coupled pair to be driven by the current of the other, thereby including the complete set of geometric and dielectric parameters of either particle in the description of the resulting hybridized resonances. Due to this comprehensiveness, Green's functions are also capable of capturing the effects of material nonlocality and anisotropy. Similar to the way that descriptions of material responses that have temporal nonlocality or ``memory'' (i.e. that nontrivially propagate source dynamics at all times $t'<t$ to their magnitude at a time $t$) can be simplified by Fourier transform to frequency space, so too can a material's spatial nonlocality be economically captured via Fourier transform. The resulting picture represents modes as a function of the wavevector $\mathbf{k}$, the Fourier analog to the position $\mathbf{r}$, and is fully describable by a Green's function $\mathbf{G}(\mathbf{k},\omega)$ dependent on both $\mathbf{k}$ and $\omega$. Additionally, a wave equation with anisotropic material susceptibilities is solvable via Green's functions the same way that simpler wave equations are, such that anisotropic effects can be included without undue added complexity. Therefore, the inclusion of nonlocality and anisotropy into my theories, while novel, will be straightforward.
+
+
+
+
+Finally, material nonlinearities will be included via the same methods described above. This will be possible by working under the assumption that any nonlinear components of a material's electric susceptibility are weak and made concrete by parameterizing these nonlinear components with simulations from Prof. Weissker's group. The weak nonlinearity assumption allows for a perturbative expansion that replaces the analytically intractable nonlinear wave equation with a series of linear wave equations of increasing order in some small parameter, the driving source in each stemming from the solutions of lower order equations. By studying only second- and third-order nonlinearities, the number of terms kept from this expansion will be minimized, leaving only a handful of tractable wave equations to be studied using Green's function methods. Importantly, this solution method demonstrates that the mode dynamics and fields of a resonant nonlinear nanostructure depend only on its linear susceptibility. The roles of the nonlinear susceptibility terms are simply to mediate energy through up/downconversion processes between these modes through the generation of emergent bound currents. Thus, questions about the hybridization-induced enhancement of nonlinear processes can be answered through very similar mathematical machinery to the methods used in linear problems.
+
+
+
+
+
+
+
+
+% \subsubsection{Interdisciplinarity}
+% \subsubsection{Gender Dimension}
+
+\textbf{\textit{Interdisciplinarity}} This research will involve the application and integration of classical and quantum electrodynamics with some atomistic modeling to solve a thoroughly theoretical problem, and as such will not be interdisciplinary beyond the fusion of techniques invented by researchers in the nanophotonics, quantum optics, and condensed matter physics communities. Further, because the goals of the research lie in forming a foundational understanding of the efficacy of infrared QPCs rather than their design and fabrication, a more interdisciplinary approach would not add significant value to the results. \textbf{\textit{Gender dimension}} The gender dimension is not relevant to the proposed research, as there are no direct impacts of gender on the assumptions or methods used to conduct the research. Also, the output of the research is separated enough from end users that any disparities brought about by the invention of photonic QPCs on the fortunes and wellbeing of people of people of different genders cannot be addressed by this research or the teams involved. \textbf{\textit{Open science practices and data management}} A commitment to open science practices will be maintained throughout the investigations herein proposed through publication of the generated codes and project notes to public repositories and websites, the use of registered reports as a method of gaining early feedback and generating interest in the scientific community, and the publication of completed manuscripts and associated data to public libraries and a new data repository maintained by the Condensed Matter Physics Center (IFiMAC) at the Universidad Aut\'{o}noma de Madrid (UAM). As the intended audience of this research is the global community of applied and experimental nanophotonics researchers, these tools will help facilitate communication and collaboration between our team and interested audience members. In particular, the use of registered reports will tune my theoretical ideas during manuscript preparation to be as useful to the experimental audience as possible and kickstart following investigations with minimal lag time after formal publication. Finally, the free availability of my efforts will also streamline reproduction of results following the completion of the fellowship.
+
+% , as all materials necessary to recreate the conclusions of the project will be available online and clearly demarcated.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textcolor{Blue}{\subsection{Quality of the supervision, training, and two-way transfer of knowledge between the researcher and the host.}}
+
+% \color{gray}
+% At a minimum, address the following aspects:
+% \begin{itemize}
+%     \item Describe the qualifications and experience of the supervisor(s). Provide information regarding the supervisors' level of experience on the research topic proposed and their track record of work, including main international collaborations, as well as the level of experience in supervising/training, especially at advanced level (i.e. PhD and postdoctoral researchers).
+%     \item Planned training activities for the researcher (scientific aspects, management/organisation, horizontal and key transferrable skills...).
+%     \item For \textit{European Fellowships}: two-way transfer of knowledge between the researcher and host organisation.\\
+%     \\
+%     \textit{\textbf{Supervision} is one of the crucial elements of successful research. Guiding, supporting, directing, advising and mentoring are key factors for a researcher to pursue his/her career path. In this context, all MSCA-funded projects are encouraged to follow the recommendations outlined in the MSCA Guidelines on Supervision (While the MSCA Guidelines on Supervision are non-binding, funded-projects are strongly encouraged to take them into account)}.
+% \end{itemize}
+
+% \subsubsection{Supervision}
+% Employers and/or funders should ensure that a person is clearly identified to whom researchers can refer for the performance of their professional duties, and should inform the researchers accordingly. 
+
+% Such arrangements should clearly define that the proposed supervisors are sufficiently expert in supervising research, have the time, knowledge, experience, expertise and commitment to be able to offer the research doctoral candidate appropriate support and provide for the necessary progress and review procedures, as well as the necessary feedback mechanisms.
+% \color{black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \newpage
+\noindent\textbf{1.3 Quality of the supervision, training, and two-way transfer of knowledge}
+% \subsubsection{Supervision}
+
+\textbf{\textit{Supervision}} I will be supervised primarily by AFD, who has demonstrated over a the past fifteen years his abilities as a world-class researcher and possesses deep knowledge of the intricacies of electrodynamic models of resonant nanostructures\supercite{cuartero-gonzalez_dipolar_2020} as well as a consistent curiosity about the fundamental limits to the performance of nanostructured devices.\supercite{fernandez-dominguez_transformation-optics_2012,fernandez-dominguez_vanishing_2021} Together, he and I will establish a career development plan early in my fellowship tenure to ensure timely growth in my technical and project management skills. My secondary advisors will be JF and FGV, who both will contribute unique and important perspectives during my development during this investigation. In particular, JF, like AFD, is a young and energetic researcher, but has focused his career on quantum mechanical models of matter and is a leading expert on the integration of lossy photonic phenomena into quantum electrodynamics models.\supercite{feist_macroscopic_2020} FGV, in contrast, has been a global leader in nanophotonics for decades, with the perspective and cross-disciplinary expertise to recognize fruitful avenues of research and avoid quagmires. In more detail:
+
+\textbf{Antonio I. Fern\'{a}ndez-Dominguez} is currently an associate professor of theoretical condensed matter physics at UAM as well as a Ram\'{o}n y Cajal Fellow and a holder of a Marie Curie Career Integration Grant. He is a young European leader in the fields of plasmonics and nanophotonics, having made key contributions to the understanding of the ultimate limits of light confinement and emission within and near plasmonic nanostructures. He has published (according to the Elsevier Scopus Author Search database) 99 scientific articles that have been cited $\sim$6500 times and accrued an $h$-index of 37 while supervising 3 graduate students and 4 postdoctoral fellows. He also holds collaborations with theoretical physicists and chemists J. B. Pendry, H.-C. Weisseker, A. Mortensen, and A. Manjavacas and experimentalists S. Meier, D. Sanvitto, G. Acu\~{n}a, and J. K. Yang as well as JF and FGV.
+
+\textbf{Johannes Feist} is a tenure track Ram\'{o}n y Cajal Fellow at UAM and a holder of a Marie Curie Career Integration Grant. He has made seminal contributions to the field of polaritonic chemistry, specializing in the interactions of quantum emitters and molecules with the modified electromagnetic densities of states of plasmons and other cavities. During his young career, he has published (Scopus) 101 scientific articles with $\sim$5000 citations that have garnered him an $h$-index of 37. His supervisory experience includes 2 graduate students and 8 postdocs (including a past MSCA fellow) and he has maintained a long-standing collaboration with AFD and FGV.
+
+\textbf{Francisco J. Garc\'{i}a-Vidal} is a full professor of theoretical condensed matter physics and the founding and current director of IFiMAC, a Mar\'i{a} de Maeztu center of excellence, at UAM. He has been awarded numerous Spanish and European grants including European Research Council Advanced Grant and is a divisional associate editor in condensed matter physics for Physical Review Letters. He is an internationally recognized expert in nanophotonics, with numerous pioneering contributions to the understanding of plasmonic waveguides, surface enhanced Raman scattering, and quantum plasmon dynamics, and has published (Scopus) 307 scientific articles that have been cited $\sim$30,000 times ($h$-index of 80). Over his career, he has supervised 14 PhD students and 15 postdoctoral fellows.
+
+
+
+
+
+\begin{figure}[b!]
+\vspace{-11pt}
+\footnotesize{
+\infootcite{cuartero-gonzalez_dipolar_2020};
+\infootcite{fernandez-dominguez_transformation-optics_2012};
+\infootcite{fernandez-dominguez_vanishing_2021};
+\infootcite{feist_macroscopic_2020};
+\infootcite{liu_continuous_2019};
+\infootcite{liberko_probing_2021};
+\infootcite{garcia_de_abajo_optical_2010}
+}
+\end{figure}
+
+
+
+
+
+
+% \subsubsection{Training Activities and Transfer of Knowledge}
+
+\textbf{\textit{Transfer of knowledge to myself}} Central to my development as a photonics researcher will be the extension of the primarily classical and quasistatic models I have employed to include radiation. Economically describing the effects of radiation is difficult and has captured the attention of researchers for two decades, but recently JF, AFD, and FGV have advanced upon a solution through their exploration of a few-mode quantization scheme for lossy cavities. I will directly benefit from this new development and receive training in the inclusion of retardation to quantum electrodynamic theories, enabling me to describe e.g. the propagation of quantum information relatively early in my fellowship period. Beyond this, I will benefit from one-on-one training by AFD, whose expertise in quasistatic polariton physics, phonon polariton confinement, and nonlocal material effects is perfectly suited to catalyze my understanding of the limits of QPC performance. Also, JF's experience with quantum emission phenomena and FGV's well-honed understanding of waveguiding phenomena will provide me with excellent opportunities to learn from preeminent experts on the generation and propagation of quantum information in a nanophotonic system. \textbf{\textit{Transfer of knowledge to host institution}} My knowledge contributions to the host team at UAM will stem partly from my expertise in integrating simple models of nanophotonics phenomena with experimental data and numerical simulations to provide a thoroughly developed understanding of the physics underpinning the observed signals, as was done with my past explorations of stimulated electron energy-loss spectroscopy\supercite{liu_continuous_2019} and infrared scanning probe microscopy\supercite{liberko_probing_2021}, and to invent novel experimental techniques with which to probe matter, as I did in a recent study of the ability of electron beams to recover the never-before-measured dielectric functions of individual nanoparticles.\supercite{olafsson_electron_2020} This clear understanding of the needs and capabilities of experimental collaborators will be shared with my new group members and facilitate new and better collaborations with experimental researchers within IFiMAC and across the broader European scientific community. Additionally, my recent work investigating hybridization-based strategies for procuring NLO phenomena enhancements puts me in an excellent position to pass on my experience studying NLO phenomena and catalyze new NLO research within the groups of AFD, JF, and FGV.
+
+\textbf{\textit{Training activities}} While located at UAM, I will also have the opportunity to benefit from the rich Spanish tradition of nanophotonics research. With world leaders in the field located within the greater Madrid metro area, Barcelona, and San Sebasti\'{a}n, regular Spanish scientific meetings and conferences such as Spanish Conference on Nanophotonics and the Nanolight workshops will provide me with the opportunity to integrate myself with the most active community of nanophotonics researchers on the planet. Additionally, through the recent Comunidad Aut\'{o}noma de Madrid synergy grant recently awarded to the UAM team, I will take an active research leadership role in planned group collaborations with researchers around Spain. I also plan to take advantage of the Cursos de Formaci\'{o}n Continua that UAM offers to develop my mentorship, leadership, and program management capabilites and augment my scientific training through courses on artificial intelligence and quantum information.
+
+
+
+
+
+
+% \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textcolor{Blue}{\subsection{Quality and appropriateness of the researcher's professional experience, competencies, and skills}}
+
+% \textcolor{gray}{Discuss the quality and appropriateness of the researcher's \textbf{existing} professional experience in relation to the proposed research project.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \newpage
+\noindent\textbf{1.4 Quality and appropriateness of the researcher's experience, competencies, and skills}
+
+I am in an excellent position to successfully pursue the research outlined in this proposal. As a graduate student at the University of Washington, I published seven publications in leading journals relevant to nanophotonics, including \textit{ACS Nano}, \textit{Nano Letters}, and \textit{ACS Photonics}, with an eighth very recently accepted and a ninth in preparation as of the time of submission, garnering 46 citations for an $h$-index of 4 (Scopus). Eight of these nine investigations were conducted in collaboration with one or more experimental research groups across the US and Canada, and of these eight I led the theory team in four and was recognized as a joint first author in three. These experiences have given me a deep appreciation for the responsibilities a theorist must take on in order to lead collaborative investigations and the lengths to which he or she must go to make his or her theories accessible to a broad audience. They have also left me with a thorough understanding of the physics underpinning important resonant phenomena in nanostructures. In detail, I have explored strategies for describing the coupling of surface plasmons to a plethora of external resonances, including scintillating atoms, fluorescent molecules, fast electrons, dielectric substrates, and other neighboring polaritons to understand the tendency of those plasmons to improve nanoscopic imaging techniques, create emergent magnetism in nonmagnetic systems, and facilitate the invention of new spectroscopic capabilities in electron beam and scanning probe microscopes. To engage in these explorations, I modeled a wide variety of nanophotonic phenomena, including quasistatic and radiative plasmonic resonances, quantum processes governing plasmon-electron interactions,\supercite{liu_continuous_2019} nonlinear light emission from novel cavities, and hybridization between SPhPs and plasmons.\supercite{liberko_probing_2021} As a result, I am now in a prime position to extend my expertise to quantum polariton resonances and focus on the dynamics of SPhPs, whose motion can often be described using similar methods to plasmonics, and explore the phenomena described in Section 1.2.
+
+
+
+
+% \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textcolor{Blue}{\section{Impact}}
+
+% \textcolor{Blue}{\subsection{Credibility of the measures to enhance the career perspectives and employability of the researcher and contribution to his/her skills development.}}
+
+% \color{gray}
+% At a minimum, address the following aspects:
+% \begin{itemize}
+%     \item \textbf{Expected} skill development of the researcher.
+%     \item \textbf{Expected} impact of the proposed research and training activities on the researcher's career perspectives inside and/or outside academia.
+% \end{itemize}
+% \color{black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% \newpage
+
+\noindent \textbf{2 Impact}\\
+\noindent \textbf{2.1 Credibility of the measures to enhance the career perspectives and employability of the researcher and contribution to his/her skills development}
+
+In the extraordinarily competitive academic job market of the 2020s, I will need to maintain a rapid publication rate while developing a rich understanding of cutting-edge science during my postdoctoral fellowship(s) period in order to achieve my goal of obtaining a tenure-track (e.g. Ram\'{o}n y Cajal) position at an internationally recognized research institution. The advising team at UAM will facilitate my ability to do just that by allowing me to integrate myself with the fantastic nanophotonics theory research community at UAM and acquire the scientific expertise and career visibility that I need to advance from postdoctoral fellow to junior faculty member.
+
+
+
+
+
+% \begin{figure}[b!]
+% \vspace{-11pt}
+% \footnotesize{
+% \infootcite{liu_continuous_2019};
+% \infootcite{liberko_probing_2021}
+% }
+% \end{figure}
+
+
+
+
+
+% \subsubsection{Skills Development}
+
+\textbf{\textit{Skills development}} Under the guidance of AFD and JF, I will advance my knowledge of phenomena governing the dynamics of material resonances in infrared nanostructures, including nonlocality and field confinement, while gaining new computational skills relating to the quantization of leaky cavities. Further, I will develop a more in-depth understanding of the particular challenges governing quantum signal propagation in SPhPs, such as entanglement maintenance and signal degradation through nonlocal effects, that I have not studied in a serious way during my PhD training. Also, I will be able to place considerable focus on the novel NLO phenomena governing quantum signal manipulation and generation, building new descriptions of the way these phenomena are extremized by the presence of nanolocalized fields that will be exceptionally useful to my research career in the future. Beyond technical skills, my advising team at UAM will provide me with fresh perspectives and ideas regarding the role of nanophotonics theory in the global science community and how it should be communicated in written and oral communications. 
+
+
+
+
+% \subsubsection{Networking and Career Development}
+
+\textbf{\textit{Networking and career development}} My advisors are well respected members of the world-leading European network of photonics researchers. They have committed to providing me with excellent opportunities to network with Spanish and European researchers through their existing collaborations. They will also encourage me to explore career paths in European institutions during my time in Europe. Furthermore, due to the intense interest among the scientific community in the invention and fabrication of novel, high-performance computing platforms for general information processing and scientific simulation, I will be able to translate my newly developed expertise into highly visible publications, conference presentations, and collaborations with leading researchers around the world. In particular, I will be given the opportunity to interact with scientists in the future who are interested in the fabrication of new QPC technologies, many of whom are housed within IFiMAC itself including J. C. Cuevas, E. del Valle, F. Prins, R. Otero, and D. Jaque, further developing my already robust interdisciplinary communication capabilities.
+
+
+
+
+
+% \newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textcolor{Blue}{\subsection{Suitability and quality of the measures to maximize expected outcomes and impacts, as set out in the dissemination and exploitation plan, including communication activities.}}
+
+% \color{gray}
+% At a minimum, address the following aspects:
+% \begin{itemize}
+%     \item \underline{Plan for the dissemination and exploitation activities, including communication activities}: Describe the planned measures to maximize the impact of your project by providing a first version of your ‘plan for the dissemination and exploitation including communication activities’. Describe the dissemination, exploitation measures that are planned, and the target group(s) addressed (e.g. scientific community, end users, financial actors, public at large). Regarding communication measures and public engagement strategy, the aim is to inform and reach out to society and show the activities performed, and the use and the benefits the project will have for citizens. Activities must be strategically planned, with clear objectives, start at the outset and continue through the lifetime of the project. The description of the communication activities needs to state the main messages as well as the tools and channels that will be used to reach out to each of the chosen target groups. \textbf{Note}: In case your proposal is selected for funding, a more detailed Dissemination and Exploitation plan will need to be provided as a mandatory project deliverable during project implementation.
+%     \item \underline{Strategy for the management of intellectual property, foreseen protection measures}: if relevant, discuss the strategy for the management of intellectual property, foreseen protection measures, such as patents, design rights, copyright, trade secrets, etc., and how these would be used to support exploitation.\\
+%     \\
+%      	All measures should be proportionate to the scale of the project, and should contain concrete actions to be implemented both during and after the end of the project.
+% \end{itemize}
+% \color{black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \newpage
+\noindent\textbf{2.2 Suitability and quality of the measures to maximize expected outcomes and impacts, as set out in the dissemination and exploitation plan, including communication activities}
+
+The research herein proposed will be conducted with care taken to maximize accessibility and visibility. In this highly digital and COVID-constrained age, prolific use of available internet resources will be of the utmost importance in achieving this goal. \textbf{\textit{Dissemination}} For example, in order to facilitate digital interactions with other scientists, modeling software used will all be open source and uploaded to public repositories like GitHub, the research will be published to open access libraries like arXiv and ChemRxiv, and the project notes and mathematical derivations will be maintained in duplicate in the cloud storage provided by UAM to be shared on request. Moreover, a well-updated group website will provide the scientific community insight into the current research activities of myself and other group members as they pertain to this project, as well as the achievement of minor milestones and intermediate goals. Of course, successful achievement of more major project goals will be communicated in the traditional ways: publications in well-established and high-impact scientific journals (ACS, APS, Nature Group, IOP) and presentations at European and American research conferences (Gordon, Telluride, Nanolight, etc.) when and if they are available.
+
+
+
+% \subsubsection{Dissemination}
+
+
+
+
+
+% \subsubsection{Communication}
+
+\textbf{\textit{Communication}} These dissemination activities will go hand-in-hand with a public communication strategy to clarify the goals and promote the successes of this research. In order to catalyze interactions with the public, publication of popular science articles and news pieces will accompany scientific articles and describe in approachable language the results and impacts of this research. I will also engage with the Week of Science program in Madrid, an enormous Madrilinean exhibition and conference program designed to facilitate public engagement with science, as well as smaller programs such as the Researchers' Night, Scientific Summer Campus, Pint of Science, and UAM Outreach to boost the local visibility of the research herein proposed and generate support for the work. \textbf{\textit{Exploitation}} The outputs of this project are intended to be scientific theories useful to applied scientists that are designing QPCs and related photonic information processing devices. Thus, focus will not be placed on industrial application of the research. However, communication will be maintained with UAM's Oficina de Transferencia de los Resultados de Investigaci\'{o}n that will provide support for commercialization and patent protection of any unforeseen results that are directly marketable. Rather, the scientific results of this research will be readily exported to collaborators such as S. Maier, G. Acu\~{n}a, F. Prins, and D. Sanvitto for immediate application in laboratory work through direct communication. If results are sufficiently impactful as to warrant associated changes to public policy, e.g. if they demonstrate the need for the formation of new facilities or funding sources to focus on QPC research, I will also be well prepared to engage with local and regional authorities through the science policy capabilities of UAM's Comunidad Aut\'{o}noma de Madrid. 
+
+
+
+
+% \subsubsection{Exploitation}
+
+
+
+
+
+
+
+
+
+
+% \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textcolor{Blue}{\subsection{The magnitude and importance of the project's contribution to the expected scientific, societal, and economic impacts}}
+
+% \color{gray}
+% \begin{itemize}
+%     \item Provide a narrative explaining how the project’s results are expected to make a difference in terms of impact, beyond the immediate scope and duration of the project. The narrative should include the components below, tailored to your project.
+%     \item Be specific, referring to the effects of your project, and not R\&I in general in this field. State the target groups that would benefit.
+%     \begin{itemize}
+%         \item \underline{Expected scientific impact(s)}: e.g. contributing to specific scientific advances, across and within disciplines, creating new knowledge, reinforcing scientific equipment and instruments, computing systems (i.e. research infrastructures)
+%         \item \underline{Expected economic/technological impact(s)}: e.g. bringing new products, services, business processes to the market, increasing efficiency, decreasing costs, increasing profits, contributing to standards’ setting, etc. 
+%         \item \underline{Expected societal impact(s)}: e.g. decreasing CO2 emissions, decreasing avoidable mortality, improving policies and decision-making, raising consumer awareness. 
+%     \end{itemize}
+%     \item Only include such outcomes and impacts where your project would make a significant and direct contribution. Avoid describing very tenuous links to wider impacts
+%     \item Give an indication of the magnitude and importance of the project’s contribution to the expected outcomes and impacts, should the project be successful. Provide quantified estimates where possible and meaningful. ‘Magnitude’ refers to how widespread the outcomes and impacts are likely to be. For example, in terms of the size of the target group, or the proportion of that group, that should benefit over time; ‘Importance’ refers to the value of those benefits. For example, number of additional healthy life years; efficiency savings in energy supply.
+% \end{itemize}
+% \color{black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \newpage
+
+\noindent\textbf{2.3 The magnitude and importance of the project's expected scientific, societal, and economic impacts}
+% \subsubsection{Scientific Impacts}
+
+\textbf{\textit{Scientific impacts}} The most immediate impacts of my research will be to provide to the quantum information and nanophotonics communities a new perspective that broadens the scope and scale of nanotechnologies thought to feasibly facilitate efficient quantum information processing and warrant further experimental investigation. Some of the ideas will be new, e.g. the invention of new strategies to maximize nanoscopic emitter efficiency, and some of the ideas will be advancements upon previously explored terrain, e.g. the close inspection of the light confinement capabilities of SPhP-supporting nanostructures. I expect the results to be global in scale, due to the presence of quantum and photonic information processing research across Europe, North America, and Asia. I also expect the research to be of direct utility for at least a decade following the conclusion of the fellowship in succeeding research and development efforts, as evidenced by the lasting and current influence of nanophotonics literature published between 2000 and 2010.\supercite{garcia_de_abajo_optical_2010} \textbf{\textit{Economic and technological impacts}} The immediate impacts of this research beyond the scientific community are expected to be small, with most of the commercial benefits assumed to accrue on a 10- to 25-year timescale. However, as the application of the results to existing industrial applications of quantum computing are not impossible, I will continue to look for opportunities during the duration of this fellowship. \textbf{\textit{Societal impacts}} Similarly, near-term uses of this research in furthering social goals are expected to be minimal.
+
+
+% \subsubsection{Economic and Technological Impacts}
+
+
+
+% However, the long-term benefits of this research could be enormous. With the ubiquity of computers in modern life and the reliance of internet technologies and chemical, drug, logistics, and financial modeling efforts on ever faster server-scale computing platforms, the invention of fast and efficient QPCs (and possibly classical photonic computers along the way) would bring about a revolution in the capabilities of personal and high-performance computers alike. Such a revolution would clearly be global in scale and produce a new personal and cloud computing market that rivals the current $\sim$\$1 trillion electronic computing market.
+
+
+% \subsubsection{Societal Impacts}
+
+
+
+% , but long term benefits could be very significant. In particular, as computers consume a large ($\sim$2\%) share of global energy output,\textbf{[cite]} low power photonic solutions to problems inefficiently tackled by electronic computers, such as cryptocurrency networks, could substantially reduce the energy draw of the global information economy.
+
+
+
+
+% \begin{figure}[b!]
+% \vspace{-11pt}
+% \footnotesize{
+% \infootcite{garcia_de_abajo_optical_2010}
+% }
+% \end{figure}
+
+
+
+
+% \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textcolor{Blue}{\section{Quality and Efficiency of the Implementation}}
+
+% \textcolor{Blue}{\subsection{Quality and effectiveness of the work plan, assessment of risks, and appropriateness of the effort assigned to work packages}}\label{sec:ResTable}
+
+% \color{gray}
+% At a minimum, address the following aspects:
+% \begin{itemize}
+%     \item Brief presentation of the overall structure of the work plan, including deliverables and milestones.
+%     \item Timing of the different work packages and their components
+%     \item Mechanisms in place to assess and mitigate risks (of research and/or administrative nature)\\
+% \end{itemize}
+% A Gantt chart must be included and should indicate the proposed Work Packages, major deliverables, milestones, secondments, placements. This Gantt chart counts towards the 10 page limit.\\
+% \\
+% The schedule in the Gantt chart should indicate the number of months elapsed from the start of the action (Month 1).
+% \color{black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \newpage
+
+\noindent\textbf{3 Quality and efficiency of the implementation}\\
+\noindent\textbf{3.1 Quality and effectiveness of the work plan, assessment of risks, and appropriateness of the work packages}
+
+\textbf{\textit{Work Plan}} The research performed in this investigation will be broken up into three aims that will be pursued in succession with overlaps that occur such that the publication of the results of work toward one aim will coincide with the outset of work toward the succeeding aim. \textit{Aim 1} will include the incorporation of radiation to a model of coupled quantum SPhP resonances in a variety of different nanostructures, including small particles (spheres, spheroids), surfaces, and larger waveguides. The goal of this model will be to describe in an economical way the relevant and experimentally accessible parameters with which to augment SPhP hybridization between neighboring particles and to characterize the ability of SPhPs to carry information between two locations within a QPC. The inclusion of radiation will be key to the accurate description of information propagation and photon entanglement as well as a faithful assessment of the ability of SPhPs to properly confine information to the nanoscale and not allow it to radiate away. \textit{Aim 2} will encompass the addition of material nonlocality and anisotropy to these models. Nonlocality is an important phenomenon in particles much smaller than the wavelength of light that they trap within their supported polariton modes and governs the ultimate limits of their ability to confine light. Material anisoptropy represents a phenomenon with which to recover qualitatively different behaviors between otherwise similar polariton modes of different energies within the same particle. The investigation of these two effects will thus be focused on developing, again through simple models, an understanding of the ultimate limits of QPC performance. \textit{Aim 3} is to extend the models described above to include ultrafast NLO effects. Because NLO effects are crucial to entangled photon generation and manipulation within QPCs, studies of their extremization within nanostructured ensembles is important for the invention of efficient QPCs. However, their dynamics are complicated and any description of them requires solid underlying linear theories of light to make sense and be useful to the scientific community. Therefore, Aim 3 will be pursued last.
+
+\setlength{\intextsep}{5pt}
+\begin{figure}[h!]
+% \vspace{-12pt}
+% \begin{center}
+    \includegraphics[width = 1.0\textwidth]{ganttChartCropped.pdf}
+% \end{center}
+\end{figure}
+
+\textbf{\textit{Schedule}} As depicted in the above Gantt chart, a career training plan (T) will be developed at the outset of the fellowship, and
+I expect to subsequently produce at least two deliverables. These are the submission of scientific manuscripts detailing my findings from pursuing Aims 1 (D1) and 2 (D2). These two deliverables will follow two separate milestones, M1 and M2, which represent the completion of the mathematical and simulation investigations of Aims 1 and 2, respectively, and indicate the transition into preparation of manuscripts, revision of scientific conclusions, double-checking of work and associated correction of errors, and submission of registered reports (R1 and R2). Achievement of the two deliverables will be followed by communication efforts (C1 and C2) in which the results will be presented on the group website, written in brief form for popular science articles, and prepared for presentation in scientific conferences. In addition, two main outreach efforts, the Madrid Science Weeks of 2022 and 2023, will be undertaken during the fellowship period (O1 and O2) alongside the other aforementioned outreach programs that will be engaged with in the interceding months. \textbf{\textit{Risk Management}} Mitigation of risks to the success of the scientific investigations described above takes two primary forms. First, as all three aims of the project rely on the accurate depiction of radiation effects, Aim 1 will be undertaken first and alone. The length that this aim is pursued will be assumed to be variable and work toward the other two aims will not be undertaken until the primary work has been completed satisfactorily. Second, the work is designed in three overlapping stages such that the publication of each manuscript is preceded by a period of error-checking. This is a crucial part of the plan, as the theoretical results of this investigation will not have an experimental component against which to check the results. Finally, risks of an administrative nature are minimal due to the replaceable nature of the equipment (computers, tablets) required to complete the research, the wide availability of cloud storage, and the reliability of the UAM's supercomputing facilities.
+
+
+
+
+
+
+
+
+
+
+% \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \textcolor{Blue}{\subsection{Quality and capacity of the host institutions and participating organizations, including hosting arrangements}}
+
+% \color{gray}
+% At a minimum, address the following aspects:
+% \begin{itemize}
+%     \item Hosting arrangements, including integration in the team/institution and support services available to the researcher.
+%     \item Quality and capacity of the participating organizations, including infrastructure, logistics, and facilities should be outlines in Part B-2 Section 5 ("Capacity of the Participating Organizations")\\
+% \end{itemize}
+% Note the for GF, both the quality and capacity of the outgoing Third Country host and the return host should be outlined.\\
+% \\
+% \textbf{Associated partners linked to a beneficiary}: If applicable, outline here the involvement of any 'associated partners linked to a beneficiary' (in particular, the name of the entity, the type of link with the beneficiary, and the tasks to be carried out). See the definitions section of the MSCA Work Programme for further information.
+% \color{black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \newpage
+
+\noindent\textbf{3.2 Quality and capacity of the host institutions and participating organizations, including hosting arrangements}
+
+While at UAM I will be integrated within the world leading community of nanophotonics researchers in the department of theoretical condensed matter physics and IFiMAC. These highly international and well respected institutions foster a culture of the highest research standards, as evidenced by their comparable publications rates to the most elite institutions of similar size around the globe. I will also have access to the $>$700 Intel CPU cores and $>$70 Nvidia GPU cores available to researchers at UAM, the $>$6500 CPU cores available through the Spanish Supercomputing Network, and the dedicated set of 70 CPU and 8 GPU cores owned an maintained but the research teams of JF and AFD. The broader community at UAM also contains myriad supporting resources that will be available to me, including the researchers within the IMDEA Nanoscience institute and CSIC Institute of Materials of Madrid sites on the UAM campus, a program management office (Vicerrectorado de Investigaci\'{o}n) with two decades of experience handling European grants and maintaining contractual compliance, and an on-site nursery. Further, UAM offers a collection of technical and soft-skills education classes offered to postdocs through the Formaci\'{o}n Docente and Formaci\'{o}n Continua programs, which will give me access to continuing training in, for example, effective public speaking (including in my non-native languages), mentorship and leadership strategies, artificial intelligence ethics and science, and assorted physics topics. These programs, in aggregate, make UAM an unbeatable institution at which to develop into an internationally recognized expert and future leader in the fields of quantum and photonic logic.
+
+
+
+
+% \newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \bibliographystyle{apsrev}
+% \bibliographystyle{unsrtnat}
+% \bibliography{refs}
+% \nobibliography{refs}
+% \printbibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
